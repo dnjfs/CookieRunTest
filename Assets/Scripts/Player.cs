@@ -34,6 +34,8 @@ public class Player : MonoBehaviour
         else
             anim.SetBool("Run", false); //달리지 않는 상태
 
+        //슬라이딩 처리
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (jumpCount < 2)
@@ -41,6 +43,7 @@ public class Player : MonoBehaviour
                 rigid.velocity = new Vector2(rigid.velocity.x, 10.0f); //rigid.AddForce(Vector2.up * 500.0f);
                 jumpCount++; //점프 횟수 증가
                 anim.SetInteger("Jump", jumpCount);
+                //점프 사운드 출력
 
                 if (jumpCount == 2)
                     anim.SetTrigger("DoubleJump"); //더블점프 트리거 설정
@@ -58,5 +61,25 @@ public class Player : MonoBehaviour
             anim.SetInteger("Jump", jumpCount);
             anim.SetTrigger("Land"); //바닥에 닿을 때
         }
+    }
+
+    void OnTriggerEnter2D(Collider2D coll)
+    {
+        if (coll.gameObject.tag == "Obstacle")
+        {
+            Debug.Log("Damaged!");
+            anim.SetTrigger("Damaged"); //데미지 트리거 설정
+            rend.color = new Color(1, 1, 1, 0.4f); //알파값 설정
+            this.gameObject.layer = LayerMask.NameToLayer("IgnoreCollision"); //레이어 변경
+            //충돌 사운드 출력
+
+            Invoke("ResetDefaultLayer", 2);
+        }
+    }
+
+    void ResetDefaultLayer()
+    {
+        this.gameObject.layer = LayerMask.NameToLayer("Default");
+        rend.color = new Color(1, 1, 1, 1f); //알파값 설정
     }
 }
