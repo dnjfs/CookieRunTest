@@ -62,7 +62,7 @@ public class Player : MonoBehaviour
             if (jumpCount < 2)
             {
                 Sliding(false);
-                rigid.velocity = new Vector2(rigid.velocity.x, 10.0f); //rigid.AddForce(Vector2.up * 500.0f);
+                rigid.velocity = new Vector2(rigid.velocity.x, 12.0f); //rigid.AddForce(Vector2.up * 500.0f);
                 jumpCount++; //점프 횟수 증가
                 anim.SetInteger("Jump", jumpCount);
                 PlaySound(Sound.Jump); //점프 사운드 출력
