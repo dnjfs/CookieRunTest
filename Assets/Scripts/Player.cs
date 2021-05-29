@@ -98,6 +98,7 @@ public class Player : MonoBehaviour
             if (anim.GetBool("Sliding")) //이미 슬라이딩 중
                 return;
 
+            PlaySound(Sound.Slide); //슬라이딩 사운드 출력
             anim.SetBool("Sliding", true);
             boxColl.size = new Vector2(boxColl.size.x, boxColl.size.y / 2);
             boxColl.offset = new Vector2(boxColl.offset.x, boxColl.offset.y - (boxColl.size.y / 2));
