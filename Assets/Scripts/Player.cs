@@ -34,19 +34,19 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        float hor = Input.GetAxis("Horizontal"); //수평이동, 좌우 방향키입력
+        //float hor = Input.GetAxis("Horizontal"); //수평이동, 좌우 방향키입력
 
-        if (hor != 0)
-        {
-            anim.SetBool("Run", true); //달리는 상태
+        //if (hor != 0)
+        //{
+        //    anim.SetBool("Run", true); //달리는 상태
 
-            if (hor < 0)
-                rend.flipX = true; //왼쪽으로 이동 시 좌우반전
-            else
-                rend.flipX = false;
-        }
-        else
-            anim.SetBool("Run", false); //달리지 않는 상태
+        //    if (hor < 0)
+        //        rend.flipX = true; //왼쪽으로 이동 시 좌우반전
+        //    else
+        //        rend.flipX = false;
+        //}
+        //else
+        //    anim.SetBool("Run", false); //달리지 않는 상태
 
         if (jumpCount == 0) //점프 중이 아닐 때
         {
@@ -71,7 +71,7 @@ public class Player : MonoBehaviour
                     anim.SetTrigger("DoubleJump"); //더블점프 트리거 설정
             }
         }
-        rigid.velocity = new Vector2(hor * 5.0f, rigid.velocity.y);
+        //rigid.velocity = new Vector2(hor * 5.0f, rigid.velocity.y);
     }
 
     void PlaySound(Sound type)
