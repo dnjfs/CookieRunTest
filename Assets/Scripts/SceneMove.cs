@@ -9,4 +9,5 @@ public class SceneMove : MonoBehaviour
     {
         SceneManager.LoadScene("Gaming");
     }
+    // 메인 수정 내용
 }
