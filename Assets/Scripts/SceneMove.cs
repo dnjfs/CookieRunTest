@@ -9,5 +9,5 @@ public class SceneMove : MonoBehaviour
     {
         SceneManager.LoadScene("Gaming");
     }
-    // 브랜치 수정 내용
+    // ë¸ëì¹ ìì  ë´ì©
 }
