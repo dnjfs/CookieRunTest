@@ -9,5 +9,5 @@ public class SceneMove : MonoBehaviour
     {
         SceneManager.LoadScene("Gaming");
     }
-    // ¸ŞÀÎ ¼öÁ¤ ³»¿ë
+    // Ã«Â¸ÂŒÃ«ÂÂœÃ¬Â¹Â˜ Ã¬ÂˆÂ˜Ã¬Â Â• Ã«Â‚Â´Ã¬ÂšÂ©
 }
